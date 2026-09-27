@@ -1,4 +1,4 @@
-name: Deploy to Fly.io
+name: Deploy Future Unfold to Fly.io
 
 on:
   push:
@@ -6,32 +6,20 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  # Reads tenants.yml and emits the list as a JSON array so the deploy job
-  # can fan out with a matrix. yq is preinstalled on ubuntu-latest runners.
-  plan:
-    runs-on: ubuntu-latest
-    outputs:
-      tenants: ${{ steps.read.outputs.tenants }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: read
-        run: |
-          tenants=$(yq -o=json '.tenants' tenants.yml | jq -c .)
-          echo "tenants=$tenants" >> "$GITHUB_OUTPUT"
-          echo "Deploy targets: $tenants"
-
   deploy:
-    needs: plan
     runs-on: ubuntu-latest
-    # fail-fast: false so one tenant's failure doesn't cancel the others
-    strategy:
-      fail-fast: false
-      matrix:
-        tenant: ${{ fromJSON(needs.plan.outputs.tenants) }}
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Deploy ${{ matrix.tenant }}
-        run: flyctl deploy -c fly.${{ matrix.tenant }}.toml
+      - name: Check Fly token
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          if [ -z "$FLY_API_TOKEN" ]; then
+            echo "Set the FLY_API_TOKEN Actions secret in this repository."
+            exit 1
+          fi
+      - name: Deploy Future Unfold
+        run: flyctl deploy -c fly.future-unfold.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
