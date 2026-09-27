@@ -1,0 +1,17 @@
+# List of all tenants this codebase deploys to.
+#
+# Each entry corresponds to:
+#   - a fly.<tenant>.toml file at the repo root
+#   - an app/seed/tenants/<tenant>/ folder
+#   - a Fly.io app named festapp-api-<tenant> (plus attached Postgres)
+#
+# Appended to by scripts/provision_tenant.sh (Phase B) when a new tenant
+# is provisioned. Consumed by .github/workflows/deploy.yml to build the
+# deploy matrix.
+
+tenants:
+  - panathenea
+  - techsaloniki
+  - reworks
+  - primer
+  - future-unfold

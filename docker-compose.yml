@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: panathenea_postgres
+    environment:
+      POSTGRES_DB: panathenea
+      POSTGRES_USER: panathenea
+      POSTGRES_PASSWORD: panathenea
+    ports:
+      - "5442:5432"
+    volumes:
+      - panathenea_pg:/var/lib/postgresql/data
+
+volumes:
+  panathenea_pg:

@@ -1,0 +1,4 @@
+# Force LF line endings for shell scripts. Committing from Windows otherwise
+# picks up CRLF on checkout, which breaks execution under WSL / Git Bash
+# (shebang gets \r appended; "env: python\r: No such file or directory").
+*.sh text eol=lf

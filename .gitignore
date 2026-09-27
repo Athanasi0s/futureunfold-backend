@@ -1,0 +1,20 @@
+
+@"
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+.idea/
+.vscode/
+.DS_Store
+"@
+
+.omc/
+
+# Google Wallet / GCP service account credentials — never commit (T-13-01)
+**/service_account*.json
+service_account*.json
+
+# Claude's commit-message temp files
+.commit-msg.tmp
