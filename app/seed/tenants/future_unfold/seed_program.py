@@ -18,14 +18,18 @@ ATHENS = ZoneInfo("Europe/Athens")
 
 SPEAKERS = {
     "Vassilis Kazas": "Managing Partner, Grant Thornton",
-    "Kyriakos Pierrakakis": "Minister of Economy and Finance",
+    "Kyriakos Pierrakakis": "Minister of Economy and Finance of the Hellenic Republic & President of the Eurogroup",
     "Stella Angelopoulou": "Partner, Head of Technology, Grant Thornton",
     "Spyros Theodoropoulos": (
-        "Chairman of the Board of Directors of SEV Hellenic Federation of "
-        "Enterprises & President & CEO, Bespoke SGA Holdings S.A."
+        "President & CEO, Bespoke SGA Holdings S.A. & Chairman of the Board "
+        "of Directors of SEV Hellenic Federation of Enterprises"
     ),
     "Agapi Sbokou": "President, SETE & CEO, PHĀEA",
-    "Theodore Fessas": "Chairman, Quest Group",
+    "Theodoros Fessas": "Chairman Quest Group, Quest Holdings",
+    "Minas Liarokapis": "CEO, Acumino Inc (tbc)",
+    "Stratos Molyviatis": "Group Chief Operating Officer at National Bank of Greece (tbc)",
+    "Vardis Vardinogiannis": "CEO, Couch Heroes (tbc)",
+    "Speaker 1": "E80 Group (tbc)",
     "Kyriakos Mitsotakis": "Prime Minister of Greece (tbc)",
     "Dr. Nikolaos Karamouzis": "President, Grant Thornton Consulting",
 }
@@ -44,21 +48,21 @@ SESSIONS = [
     (
         "19:10",
         "19:45",
-        "Discussion Circle: Accelerating Greek Entrepreneurship | The AI Challenge",
+        "Discussion Circle: “Accelerating Greek Entrepreneurship | The Next AI Frontier”",
         "panel",
-        ["Spyros Theodoropoulos", "Agapi Sbokou", "Theodore Fessas"],
+        ["Spyros Theodoropoulos", "Agapi Sbokou", "Theodoros Fessas"],
     ),
     (
         "19:45",
         "20:00",
-        "Future Advantage | Industry Insights by Greek Entrepreneurs (tba)",
+        "Future Advantage | Industry Insight by: (Video Address)",
         "video",
-        [],
+        ["Minas Liarokapis", "Stratos Molyviatis", "Vardis Vardinogiannis", "Speaker 1"],
     ),
     (
         "20:00",
         "20:30",
-        "Discussion with Prime Minister Kyriakos Mitsotakis on AI, Human Impact, and the Future of Society",
+        "Discussion with Prime Minister Kyriakos Mitsotakis on AI, People and the Future of Society",
         "panel",
         ["Kyriakos Mitsotakis", "Dr. Nikolaos Karamouzis", "Vassilis Kazas"],
     ),
@@ -67,7 +71,9 @@ SESSIONS = [
 
 
 def _email_for(name: str) -> str:
-    slug = re.sub(r"[^a-z0-9]+", ".", name.lower()).strip(".")
+    # Keep the existing identity when correcting the spelling of Fessas’s name.
+    legacy_name = "Theodore Fessas" if name == "Theodoros Fessas" else name
+    slug = re.sub(r"[^a-z0-9]+", ".", legacy_name.lower()).strip(".")
     return f"speaker+{slug}@future-unfold.invalid"
 
 
@@ -102,7 +108,7 @@ def run() -> None:
             users[name] = user
 
         for start, end, title, session_type, speaker_names in SESSIONS:
-            session = db.query(Session).filter(Session.title == title).first()
+            session = db.query(Session).filter(Session.start_time == _at(start)).first()
             if session is None:
                 session = Session(
                     title=title,
@@ -113,6 +119,7 @@ def run() -> None:
                 db.add(session)
                 db.flush()
             else:
+                session.title = title
                 session.start_time = _at(start)
                 session.end_time = _at(end)
                 session.type = session_type
