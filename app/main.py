@@ -67,14 +67,14 @@ a{color:#4f46e5}footer{margin-top:40px;padding-top:16px;border-top:1px solid #dd
 def home_page():
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Panathenea Festival</title>
+<title>{EVENT_NAME}</title>
 <style>{_PAGE_STYLE}</style>
 </head><body>
-<h1>Panathenea Festival</h1>
-<p><strong>The official mobile app for the Panathenea festival experience.</strong></p>
+<h1>{EVENT_NAME}</h1>
+<p><strong>The official mobile app for the {EVENT_NAME} experience.</strong></p>
 
 <h2>About</h2>
-<p>Panathenea Festival is a cross-platform mobile application that helps attendees, speakers, and exhibitors
+<p>{EVENT_NAME} is a cross-platform mobile application that helps attendees, speakers, and exhibitors
 get the most out of the festival. Features include:</p>
 <ul>
 <li>Personalised program schedule and agenda management</li>
@@ -93,7 +93,7 @@ get the most out of the festival. Features include:</p>
 
 <footer>
 <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
-<br>&copy; 2026 Panathenea Festival
+<br>&copy; 2026 {EVENT_NAME}
 </footer>
 </body></html>"""
 
@@ -102,11 +102,11 @@ get the most out of the festival. Features include:</p>
 def privacy_policy():
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy — Panathenea Festival</title>
+<title>Privacy Policy — {EVENT_NAME}</title>
 <style>{_PAGE_STYLE}</style>
 </head><body>
 <h1>Privacy Policy</h1>
-<p><strong>Panathenea Festival</strong></p>
+<p><strong>{EVENT_NAME}</strong></p>
 <p>This privacy policy is a placeholder and will be updated with full details before public release.</p>
 <p>We collect only the information necessary to provide festival services: your name, email, event preferences,
 and calendar availability (when you opt in to Google Calendar integration). We do not sell your data to third parties.</p>
@@ -120,11 +120,11 @@ and calendar availability (when you opt in to Google Calendar integration). We d
 def terms_of_service():
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Terms of Service — Panathenea Festival</title>
+<title>Terms of Service — {EVENT_NAME}</title>
 <style>{_PAGE_STYLE}</style>
 </head><body>
 <h1>Terms of Service</h1>
-<p><strong>Panathenea Festival</strong></p>
+<p><strong>{EVENT_NAME}</strong></p>
 <p>These terms of service are a placeholder and will be updated with full details before public release.</p>
 <p>By using this app you agree to use it for its intended purpose of festival participation. Misuse, harassment,
 or abuse of other users may result in account suspension.</p>
