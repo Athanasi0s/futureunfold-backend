@@ -89,7 +89,7 @@ get the most out of the festival. Features include:</p>
 </ul>
 
 <h2>Contact</h2>
-<p>For questions or support, email <a href="mailto:sarmatas83@gmail.com">sarmatas83@gmail.com</a>.</p>
+<p>For questions or support, email <a href="mailto:festivity365@gmail.com">festivity365@gmail.com</a>.</p>
 
 <footer>
 <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
@@ -110,7 +110,7 @@ def privacy_policy():
 <p>This privacy policy is a placeholder and will be updated with full details before public release.</p>
 <p>We collect only the information necessary to provide festival services: your name, email, event preferences,
 and calendar availability (when you opt in to Google Calendar integration). We do not sell your data to third parties.</p>
-<p>If you have questions, contact us at <a href="mailto:sarmatas83@gmail.com">sarmatas83@gmail.com</a>.</p>
+<p>If you have questions, contact us at <a href="mailto:festivity365@gmail.com">festivity365@gmail.com</a>.</p>
 <p><em>Last updated: April 2026</em></p>
 <footer><a href="/">Home</a> &middot; <a href="/terms">Terms of Service</a></footer>
 </body></html>"""
@@ -128,7 +128,7 @@ def terms_of_service():
 <p>These terms of service are a placeholder and will be updated with full details before public release.</p>
 <p>By using this app you agree to use it for its intended purpose of festival participation. Misuse, harassment,
 or abuse of other users may result in account suspension.</p>
-<p>If you have questions, contact us at <a href="mailto:sarmatas83@gmail.com">sarmatas83@gmail.com</a>.</p>
+<p>If you have questions, contact us at <a href="mailto:festivity365@gmail.com">festivity365@gmail.com</a>.</p>
 <p><em>Last updated: April 2026</em></p>
 <footer><a href="/">Home</a> &middot; <a href="/privacy">Privacy Policy</a></footer>
 </body></html>"""
