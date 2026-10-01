@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.api.router import api_router
-from app.core.config import UPLOAD_DIR
+from app.core.config import EVENT_NAME, UPLOAD_DIR
 from app.scheduler import create_scheduler, register_jobs
 
 logger = logging.getLogger(__name__)
@@ -28,7 +28,7 @@ async def lifespan(application: FastAPI):
     logger.info("APScheduler shut down")
 
 
-app = FastAPI(title="Panathenea API", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title=f"{EVENT_NAME} API", version="0.1.0", lifespan=lifespan)
 
 # Για αρχή αφήνουμε CORS ανοιχτό, ώστε να μπορεί να καλεί το API το κινητό και το kiosk.
 # Σε production θα βάλουμε συγκεκριμένα domains.
