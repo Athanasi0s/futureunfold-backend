@@ -75,7 +75,7 @@ def home_page():
 
 <h2>About</h2>
 <p>{EVENT_NAME} is a cross-platform mobile application that helps attendees, speakers, and exhibitors
-get the most out of the festival. Features include:</p>
+get the most out of the event. Features include:</p>
 <ul>
 <li>Personalised program schedule and agenda management</li>
 <li>Networking and attendee matching based on shared interests</li>
@@ -108,10 +108,10 @@ def privacy_policy():
 <h1>Privacy Policy</h1>
 <p><strong>{EVENT_NAME}</strong></p>
 <p>This privacy policy is a placeholder and will be updated with full details before public release.</p>
-<p>We collect only the information necessary to provide festival services: your name, email, event preferences,
+<p>We collect only the information necessary to provide event services: your name, email, event preferences,
 and calendar availability (when you opt in to Google Calendar integration). We do not sell your data to third parties.</p>
 <p>If you have questions, contact us at <a href="mailto:festivity365@gmail.com">festivity365@gmail.com</a>.</p>
-<p><em>Last updated: April 2026</em></p>
+<p><em>Last updated: 10/2026</em></p>
 <footer><a href="/">Home</a> &middot; <a href="/terms">Terms of Service</a></footer>
 </body></html>"""
 
@@ -126,9 +126,9 @@ def terms_of_service():
 <h1>Terms of Service</h1>
 <p><strong>{EVENT_NAME}</strong></p>
 <p>These terms of service are a placeholder and will be updated with full details before public release.</p>
-<p>By using this app you agree to use it for its intended purpose of festival participation. Misuse, harassment,
+<p>By using this app you agree to use it for its intended purpose of event participation. Misuse, harassment,
 or abuse of other users may result in account suspension.</p>
 <p>If you have questions, contact us at <a href="mailto:festivity365@gmail.com">festivity365@gmail.com</a>.</p>
-<p><em>Last updated: April 2026</em></p>
+<p><em>Last updated: 10/2026</em></p>
 <footer><a href="/">Home</a> &middot; <a href="/privacy">Privacy Policy</a></footer>
 </body></html>"""
