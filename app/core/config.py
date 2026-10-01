@@ -53,7 +53,7 @@ STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET", "")
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY", "")
 SENDGRID_FROM_EMAIL = os.getenv("SENDGRID_FROM_EMAIL", "noreply@example.com")
-EVENT_NAME = os.getenv("EVENT_NAME", "Panathenea Festival")
+EVENT_NAME = os.getenv("EVENT_NAME", "Future Unfold" if TENANT_KEY == "future-unfold" else "Panathenea Festival")
 
 # EVENTORA one-time invitation links. The shared secret must be exchanged
 # through an approved secret-management channel and never committed.
