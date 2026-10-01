@@ -253,7 +253,7 @@ def payment_complete():
     return HTMLResponse(content="""
     <html><body style="font-family:sans-serif;text-align:center;padding:60px">
       <h2>Payment Complete</h2>
-      <p>Your ticket has been confirmed. Return to the Panathenea app to view your ticket.</p>
+      <p>Your ticket has been confirmed. Return to the {EVENT_NAME} app to view your ticket.</p>
     </body></html>
     """)
 
@@ -262,6 +262,6 @@ def payment_cancelled():
     return HTMLResponse(content="""
     <html><body style="font-family:sans-serif;text-align:center;padding:60px">
       <h2>Payment Cancelled</h2>
-      <p>No charge was made. Return to the Panathenea app to try again.</p>
+      <p>No charge was made. Return to the {EVENT_NAME} app to try again.</p>
     </body></html>
     """)
