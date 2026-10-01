@@ -301,7 +301,7 @@ def get_journey_timeline_endpoint(
 # ──────────────────────────────────────
 _DEFAULT_CERTIFICATE_TEMPLATE = {
     "version": 1,
-    "festival_name": "Panathenea 2026",
+    "festival_name": "Future Unfold 2026",
     "tagline": "Innovation Meets Tradition",
     "logo_url": None,
     "primary_color": "#194ff0",
